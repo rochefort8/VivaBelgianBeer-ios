@@ -48,10 +48,8 @@
 		027B00341AF5C23A000144EC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B00331AF5C23A000144EC /* Security.framework */; };
 		027B00361AF5C24B000144EC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B00351AF5C24B000144EC /* CoreLocation.framework */; };
 		027B00381AF5C25F000144EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B00371AF5C25F000144EC /* MobileCoreServices.framework */; };
-		027B003A1AF5C271000144EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B00391AF5C271000144EC /* libsqlite3.dylib */; };
 		027B003C1AF5C285000144EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B003B1AF5C285000144EC /* SystemConfiguration.framework */; };
 		027B00401AF5C2A8000144EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B003F1AF5C2A8000144EC /* QuartzCore.framework */; };
-		027B00421AF5C2B6000144EC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B00411AF5C2B6000144EC /* libz.dylib */; };
 		027B00461AF63780000144EC /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027B00451AF63780000144EC /* Quiz.storyboard */; };
 		027B00491AF63C09000144EC /* QuizQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B00481AF63C09000144EC /* QuizQuestionViewController.m */; };
 		027BFFEC1AF5363F000144EC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027BFFEB1AF5363F000144EC /* Home.storyboard */; };
@@ -59,6 +57,7 @@
 		027BFFF41AF536D5000144EC /* PhotoRelay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027BFFF11AF536D5000144EC /* PhotoRelay.storyboard */; };
 		028AF95B1BA67BDC0056D7E8 /* TochikujiContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 028AF95A1BA67BDC0056D7E8 /* TochikujiContent.m */; };
 		028AF95E1BA6A2640056D7E8 /* tochikuji.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 028AF95D1BA6A2640056D7E8 /* tochikuji.mp3 */; };
+		02910D701D658C7F00FB7E58 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 02910D6F1D658C7F00FB7E58 /* libsqlite3.tbd */; };
 		029FB5961B7644B50038D018 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 029FB5951B7644B50038D018 /* CommentViewController.m */; };
 		02A127421B5CB4F8001C384F /* AdWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A127411B5CB4F8001C384F /* AdWebViewController.m */; };
 		02AC09001AFF6DB400A93F09 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AC08FF1AFF6DB400A93F09 /* Accounts.framework */; };
@@ -284,10 +283,8 @@
 		027B00331AF5C23A000144EC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		027B00351AF5C24B000144EC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		027B00371AF5C25F000144EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		027B00391AF5C271000144EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		027B003B1AF5C285000144EC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		027B003F1AF5C2A8000144EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		027B00411AF5C2B6000144EC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		027B00451AF63780000144EC /* Quiz.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Quiz.storyboard; path = ../../Resources/Storyboards/Quiz.storyboard; sourceTree = "<group>"; };
 		027B00471AF63C09000144EC /* QuizQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizQuestionViewController.h; sourceTree = "<group>"; };
 		027B00481AF63C09000144EC /* QuizQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizQuestionViewController.m; sourceTree = "<group>"; };
@@ -301,6 +298,7 @@
 		028AF9591BA67BDC0056D7E8 /* TochikujiContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TochikujiContent.h; sourceTree = "<group>"; };
 		028AF95A1BA67BDC0056D7E8 /* TochikujiContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TochikujiContent.m; sourceTree = "<group>"; };
 		028AF95D1BA6A2640056D7E8 /* tochikuji.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tochikuji.mp3; path = Resources/Tochikuji/tochikuji.mp3; sourceTree = "<group>"; };
+		02910D6F1D658C7F00FB7E58 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		029FB5941B7644B50038D018 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		029FB5951B7644B50038D018 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		02A127401B5CB4F8001C384F /* AdWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWebViewController.h; sourceTree = "<group>"; };
@@ -504,12 +502,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02910D701D658C7F00FB7E58 /* libsqlite3.tbd in Frameworks */,
 				02AC09021AFF6DC200A93F09 /* Social.framework in Frameworks */,
 				02AC09001AFF6DB400A93F09 /* Accounts.framework in Frameworks */,
-				027B00421AF5C2B6000144EC /* libz.dylib in Frameworks */,
 				027B00401AF5C2A8000144EC /* QuartzCore.framework in Frameworks */,
 				027B003C1AF5C285000144EC /* SystemConfiguration.framework in Frameworks */,
-				027B003A1AF5C271000144EC /* libsqlite3.dylib in Frameworks */,
 				027B00381AF5C25F000144EC /* MobileCoreServices.framework in Frameworks */,
 				02C52EFE1AFCFBB80086B463 /* Bolts.framework in Frameworks */,
 				027B00361AF5C24B000144EC /* CoreLocation.framework in Frameworks */,
@@ -575,7 +572,6 @@
 		0243FA571AF530B3009D959E = {
 			isa = PBXGroup;
 			children = (
-				027B00411AF5C2B6000144EC /* libz.dylib */,
 				0243FA621AF530B3009D959E /* vivabelgianbeer */,
 				0243FA7C1AF530B3009D959E /* vivabelgianbeerTests */,
 				0243FA611AF530B3009D959E /* Products */,
@@ -664,7 +660,6 @@
 				02C52EFD1AFCFBB80086B463 /* Bolts.framework */,
 				027B003F1AF5C2A8000144EC /* QuartzCore.framework */,
 				027B003B1AF5C285000144EC /* SystemConfiguration.framework */,
-				027B00391AF5C271000144EC /* libsqlite3.dylib */,
 				027B00371AF5C25F000144EC /* MobileCoreServices.framework */,
 				027B00351AF5C24B000144EC /* CoreLocation.framework */,
 				027B00331AF5C23A000144EC /* Security.framework */,
@@ -1080,6 +1075,7 @@
 		4A7A303ABEB154FB6FA8546B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02910D6F1D658C7F00FB7E58 /* libsqlite3.tbd */,
 				0ADB56FB50894C717F8F2EA0 /* libPods-vivabelgianbeer.a */,
 				746BF011F500F582B0701B9B /* libPods-vivabelgianbeerTests.a */,
 			);
