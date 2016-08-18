@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GvK-JJ-0fq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Tochikuji-->
+        <scene sceneID="X2L-c1-AXd">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="GvK-JJ-0fq" userLabel="Tochikuji" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="とーちくじ" image="Icon_quiz" id="fa6-nT-tQY" userLabel="クイズ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cK0-fv-v0J">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.95634075129999996" green="0.95634075129999996" blue="0.95634075129999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.53333333329999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PTE-r7-hKl" kind="relationship" relationship="rootViewController" id="FFF-MX-KM4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cxs-LW-8L6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-461" y="-224"/>
+        </scene>
+        <!--Tochikuji-->
+        <scene sceneID="iNQ-FN-UoN">
+            <objects>
+                <viewController storyboardIdentifier="Tochikuji" id="PTE-r7-hKl" userLabel="Tochikuji" customClass="TochikujiViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uND-1V-NFs"/>
+                        <viewControllerLayoutGuide type="bottom" id="tyC-df-rwH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vXg-oK-Q2m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yes-Yi-6kW">
+                                <rect key="frame" x="20" y="464" width="280" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7QH-Xj-jGH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="24"/>
+                                <color key="tintColor" red="0.53333333329999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="始める">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EHO-Pc-xzO" kind="push" id="4KZ-hr-KoY"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WAJ-Jh-w5G">
+                                <rect key="frame" x="150" y="434" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PVj-C2-Ksx">
+                                <rect key="frame" x="0.0" y="64" width="320" height="360"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="wSx-aH-Ls9" customClass="UIRefreshControl">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onRefresh:" destination="PTE-r7-hKl" eventType="valueChanged" id="Bwx-uO-XZF"/>
+                                    </connections>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tyC-df-rwH" firstAttribute="top" secondItem="yes-Yi-6kW" secondAttribute="bottom" constant="15" id="3yD-dr-mAo"/>
+                            <constraint firstItem="PVj-C2-Ksx" firstAttribute="leading" secondItem="vXg-oK-Q2m" secondAttribute="leading" id="Bjf-iT-kzR"/>
+                            <constraint firstItem="yes-Yi-6kW" firstAttribute="leading" secondItem="vXg-oK-Q2m" secondAttribute="leading" constant="20" id="HYn-yQ-8nl"/>
+                            <constraint firstAttribute="trailing" secondItem="PVj-C2-Ksx" secondAttribute="trailing" id="PcW-fz-uxQ"/>
+                            <constraint firstItem="yes-Yi-6kW" firstAttribute="top" secondItem="WAJ-Jh-w5G" secondAttribute="bottom" constant="10" id="RXY-6A-ylf"/>
+                            <constraint firstAttribute="centerX" secondItem="WAJ-Jh-w5G" secondAttribute="centerX" id="cjc-MF-2sn"/>
+                            <constraint firstItem="WAJ-Jh-w5G" firstAttribute="top" secondItem="PVj-C2-Ksx" secondAttribute="bottom" constant="10" id="nK3-12-jHO"/>
+                            <constraint firstItem="PVj-C2-Ksx" firstAttribute="top" secondItem="uND-1V-NFs" secondAttribute="bottom" id="rPe-YL-smr"/>
+                            <constraint firstAttribute="trailing" secondItem="yes-Yi-6kW" secondAttribute="trailing" constant="20" id="xz5-xJ-rif"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="とーちくじ" id="aiS-3w-xxM"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="WAJ-Jh-w5G" id="smI-td-5kG"/>
+                        <outlet property="startButton" destination="yes-Yi-6kW" id="Sgc-9D-ITI"/>
+                        <outlet property="tableView" destination="PVj-C2-Ksx" id="COf-PV-dmJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IrO-oW-Naz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2" y="-238"/>
+        </scene>
+        <!--とーちくじ-->
+        <scene sceneID="lJJ-jT-89a">
+            <objects>
+                <viewController storyboardIdentifier="Quiz" id="EHO-Pc-xzO" userLabel="とーちくじ" customClass="TochikujiSlideViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r0b-N8-PHJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yzn-IS-64N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xn3-eS-n0u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lhx-ex-VDg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4St-Eh-NfH">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouch:" destination="EHO-Pc-xzO" eventType="touchUpInside" id="bYy-Kr-tGX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Lhx-ex-VDg" secondAttribute="trailing" id="6dR-gl-hhP"/>
+                            <constraint firstItem="Lhx-ex-VDg" firstAttribute="top" secondItem="r0b-N8-PHJ" secondAttribute="bottom" id="6gu-i5-fp7"/>
+                            <constraint firstItem="4St-Eh-NfH" firstAttribute="leading" secondItem="xn3-eS-n0u" secondAttribute="leading" id="DLP-M8-7Jg"/>
+                            <constraint firstItem="Yzn-IS-64N" firstAttribute="top" secondItem="4St-Eh-NfH" secondAttribute="bottom" priority="750" id="Twg-TE-bwj"/>
+                            <constraint firstItem="4St-Eh-NfH" firstAttribute="top" secondItem="r0b-N8-PHJ" secondAttribute="bottom" id="hiY-vO-AAh"/>
+                            <constraint firstAttribute="trailing" secondItem="4St-Eh-NfH" secondAttribute="trailing" id="j2Q-Ie-IYg"/>
+                            <constraint firstItem="Lhx-ex-VDg" firstAttribute="leading" secondItem="xn3-eS-n0u" secondAttribute="leading" id="j2d-zc-I89"/>
+                            <constraint firstItem="Yzn-IS-64N" firstAttribute="top" secondItem="Lhx-ex-VDg" secondAttribute="bottom" id="oM9-vt-RAC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="画面をタップしてね！" id="0gs-z6-lNu">
+                        <barButtonItem key="rightBarButtonItem" image="Icon_Cancel" id="bo2-R0-5cC">
+                            <connections>
+                                <action selector="onCancel:" destination="EHO-Pc-xzO" id="cxs-lc-COy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Lhx-ex-VDg" id="Fks-ee-bRE"/>
+                        <segue destination="ejr-0u-aBh" kind="push" identifier="toTochikujiResultView" id="07A-0L-29U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EH2-TE-nPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441" y="-238"/>
+        </scene>
+        <!--あなたの運勢-->
+        <scene sceneID="XvN-cl-eUj">
+            <objects>
+                <viewController storyboardIdentifier="tochikuji_result" id="ejr-0u-aBh" userLabel="あなたの運勢" customClass="TochikujiResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H7C-lh-be5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ue1-4B-yTF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="quiz_result" id="u0S-JE-Hah">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apT-g6-drH">
+                                <rect key="frame" x="20" y="476" width="280" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Zqb-wO-3xn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
+                                <state key="normal" title="最初の画面に戻る">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onReturn:" destination="ejr-0u-aBh" eventType="touchUpInside" id="lFQ-cj-REk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Tochikun1" translatesAutoresizingMaskIntoConstraints="NO" id="kXJ-Rn-etC">
+                                <rect key="frame" x="6" y="82" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Xbr-Sa-RST"/>
+                                    <constraint firstAttribute="width" constant="50" id="YJd-5Z-usU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="191" translatesAutoresizingMaskIntoConstraints="NO" id="laC-Bt-Dk9">
+                                <rect key="frame" x="66" y="74" width="244" height="66"/>
+                                <string key="text">今日のお守りにしてね！
+また明日！</string>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="tochikuji_result" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-9H-irG" customClass="Tochi">
+                                <rect key="frame" x="0.0" y="147" width="320" height="311"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="laC-Bt-Dk9" secondAttribute="trailing" constant="10" id="1oV-cv-FAv"/>
+                            <constraint firstItem="apT-g6-drH" firstAttribute="leading" secondItem="u0S-JE-Hah" secondAttribute="leading" constant="20" id="8Ea-PL-jD5"/>
+                            <constraint firstItem="apT-g6-drH" firstAttribute="top" secondItem="XWm-9H-irG" secondAttribute="bottom" constant="18" id="COh-Kn-8dt"/>
+                            <constraint firstItem="kXJ-Rn-etC" firstAttribute="top" secondItem="H7C-lh-be5" secondAttribute="bottom" constant="18" id="LSC-53-jaw"/>
+                            <constraint firstItem="ue1-4B-yTF" firstAttribute="top" secondItem="apT-g6-drH" secondAttribute="bottom" constant="8" id="O3P-cp-RAT"/>
+                            <constraint firstItem="XWm-9H-irG" firstAttribute="top" secondItem="kXJ-Rn-etC" secondAttribute="bottom" constant="15" id="WhG-vI-CuK"/>
+                            <constraint firstAttribute="centerX" secondItem="laC-Bt-Dk9" secondAttribute="centerX" constant="-28" id="lkB-xK-DOL"/>
+                            <constraint firstItem="laC-Bt-Dk9" firstAttribute="leading" secondItem="kXJ-Rn-etC" secondAttribute="trailing" constant="10" id="tKO-3X-tqm"/>
+                            <constraint firstItem="XWm-9H-irG" firstAttribute="leading" secondItem="u0S-JE-Hah" secondAttribute="leading" id="txt-9O-VKw"/>
+                            <constraint firstAttribute="trailing" secondItem="XWm-9H-irG" secondAttribute="trailing" id="uSf-We-TOb"/>
+                            <constraint firstAttribute="trailing" secondItem="apT-g6-drH" secondAttribute="trailing" constant="20" id="uV7-CJ-zlU"/>
+                            <constraint firstItem="laC-Bt-Dk9" firstAttribute="top" secondItem="H7C-lh-be5" secondAttribute="bottom" constant="10" id="wlH-yj-mUP"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="くじゲット！" id="M4a-7m-1Jf"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="XWm-9H-irG" id="yMu-wI-8TB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahg-P3-m5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="-238"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon_Cancel" width="30" height="30"/>
+        <image name="Icon_quiz" width="20" height="20"/>
+        <image name="Image_Tochikun1" width="250" height="267"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KeE-NA-eio">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--SchoolRoute-->
+        <scene sceneID="Jar-Tk-9I9">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="KeE-NA-eio" userLabel="SchoolRoute" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="通学路" image="Icon_news" id="7Mu-Pw-6Ra" userLabel="一覧"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yaY-b6-HjO">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.95634075129999996" green="0.95634075129999996" blue="0.95634075129999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.53333333329999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hYc-HN-oGd" kind="relationship" relationship="rootViewController" id="q6E-hi-HTl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSz-Xl-Y2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-665" y="14"/>
+        </scene>
+        <!--SchoolRoute-->
+        <scene sceneID="dl4-SB-W7T">
+            <objects>
+                <viewController storyboardIdentifier="SchoolRoute" title="toSchoolRouteVideoView" id="hYc-HN-oGd" userLabel="SchoolRoute" customClass="SchoolRouteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BcE-Ji-nhQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="V5r-wj-5zj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BV0-CC-Mla">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LEd-Mg-QQ2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="dmY-hE-1pl" customClass="UIRefreshControl">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="59"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onRefresh:" destination="hYc-HN-oGd" eventType="valueChanged" id="bB0-Ml-N6o"/>
+                                    </connections>
+                                </view>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AfW-u5-N9y">
+                                <rect key="frame" x="150" y="499" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="AfW-u5-N9y" secondAttribute="centerX" id="FhG-fs-dmG"/>
+                            <constraint firstAttribute="bottom" secondItem="LEd-Mg-QQ2" secondAttribute="bottom" id="PNm-M9-i4a"/>
+                            <constraint firstItem="LEd-Mg-QQ2" firstAttribute="leading" secondItem="BV0-CC-Mla" secondAttribute="leading" id="QGs-Cf-Aag"/>
+                            <constraint firstItem="V5r-wj-5zj" firstAttribute="top" secondItem="AfW-u5-N9y" secondAttribute="bottom" id="VE9-PD-Rvd"/>
+                            <constraint firstItem="LEd-Mg-QQ2" firstAttribute="top" secondItem="BV0-CC-Mla" secondAttribute="top" id="Xx8-Vm-ohh"/>
+                            <constraint firstAttribute="trailing" secondItem="LEd-Mg-QQ2" secondAttribute="trailing" id="lcC-6B-KZh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="通学路" id="it4-lj-C1H" userLabel="一覧">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="ItR-Mg-9x4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="AfW-u5-N9y" id="4y4-j1-8oJ"/>
+                        <outlet property="tableView" destination="LEd-Mg-QQ2" id="zdg-95-vYV"/>
+                        <segue destination="cHT-b4-ujP" kind="push" identifier="toSchoolRouteVideoView" id="Kkw-h5-nlu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fg8-YJ-gZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-151" y="4"/>
+        </scene>
+        <!--School Route Video View Controller-->
+        <scene sceneID="9Va-Ch-Vnx">
+            <objects>
+                <viewController storyboardIdentifier="SchoolRouteVideoView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cHT-b4-ujP" customClass="SchoolRouteVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UhX-dr-BfC"/>
+                        <viewControllerLayoutGuide type="bottom" id="MXB-5H-ZhV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hW9-dP-hae">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sm3-DW-QgZ" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="504" id="CtL-v3-h90"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sm3-DW-QgZ" firstAttribute="top" secondItem="UhX-dr-BfC" secondAttribute="bottom" id="69I-EM-418"/>
+                            <constraint firstItem="Sm3-DW-QgZ" firstAttribute="leading" secondItem="hW9-dP-hae" secondAttribute="leading" id="H3O-UA-ZWB"/>
+                            <constraint firstAttribute="trailing" secondItem="Sm3-DW-QgZ" secondAttribute="trailing" id="xvk-ZL-DCn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gEe-jM-5VX"/>
+                    <connections>
+                        <outlet property="playerView" destination="Sm3-DW-QgZ" id="FxK-KA-hW7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G89-kc-Wig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon_news" width="20" height="20"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
