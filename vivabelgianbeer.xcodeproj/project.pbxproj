@@ -176,9 +176,6 @@
 		02B5766F1AFCE45200AF1A1B /* textfieldComment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B575FB1AFCE45100AF1A1B /* textfieldComment@2x.png */; };
 		02B576701AFCE45200AF1A1B /* titleFindFriends.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B575FC1AFCE45100AF1A1B /* titleFindFriends.png */; };
 		02B576711AFCE45200AF1A1B /* titleFindFriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B575FD1AFCE45100AF1A1B /* titleFindFriends@2x.png */; };
-		02C52EFE1AFCFBB80086B463 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C52EFD1AFCFBB80086B463 /* Bolts.framework */; };
-		02C52F001AFCFBC90086B463 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C52EFF1AFCFBC90086B463 /* Parse.framework */; };
-		02C52F021AFCFBD80086B463 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C52F011AFCFBD80086B463 /* ParseUI.framework */; };
 		02CA18671B049CA100905B69 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CA18661B049CA100905B69 /* HomeViewCell.xib */; };
 		02CA186A1B049F3900905B69 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CA18691B049F3900905B69 /* HomeViewCell.m */; };
 		02CA186F1B05633A00905B69 /* QuizViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CA186E1B05633A00905B69 /* QuizViewCell.m */; };
@@ -445,9 +442,6 @@
 		02B575FC1AFCE45100AF1A1B /* titleFindFriends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleFindFriends.png; sourceTree = "<group>"; };
 		02B575FD1AFCE45100AF1A1B /* titleFindFriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "titleFindFriends@2x.png"; sourceTree = "<group>"; };
 		02B5767D1AFCE4D000AF1A1B /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		02C52EFD1AFCFBB80086B463 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = External/Bolts.framework; sourceTree = "<group>"; };
-		02C52EFF1AFCFBC90086B463 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = External/Parse.framework; sourceTree = "<group>"; };
-		02C52F011AFCFBD80086B463 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = External/ParseUI.framework; sourceTree = "<group>"; };
 		02CA18661B049CA100905B69 /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		02CA18681B049F3900905B69 /* HomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		02CA18691B049F3900905B69 /* HomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
@@ -508,12 +502,9 @@
 				027B00401AF5C2A8000144EC /* QuartzCore.framework in Frameworks */,
 				027B003C1AF5C285000144EC /* SystemConfiguration.framework in Frameworks */,
 				027B00381AF5C25F000144EC /* MobileCoreServices.framework in Frameworks */,
-				02C52EFE1AFCFBB80086B463 /* Bolts.framework in Frameworks */,
 				027B00361AF5C24B000144EC /* CoreLocation.framework in Frameworks */,
 				027B00341AF5C23A000144EC /* Security.framework in Frameworks */,
-				02C52F001AFCFBC90086B463 /* Parse.framework in Frameworks */,
 				027B00321AF5C1F5000144EC /* CoreGraphics.framework in Frameworks */,
-				02C52F021AFCFBD80086B463 /* ParseUI.framework in Frameworks */,
 				027B00301AF5C1E6000144EC /* CFNetwork.framework in Frameworks */,
 				027B002E1AF5C1DD000144EC /* AudioToolbox.framework in Frameworks */,
 				A55B6F64B7817C730EFD0014 /* libPods-vivabelgianbeer.a in Frameworks */,
@@ -655,9 +646,6 @@
 		027B002C1AF5C0FD000144EC /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				02C52F011AFCFBD80086B463 /* ParseUI.framework */,
-				02C52EFF1AFCFBC90086B463 /* Parse.framework */,
-				02C52EFD1AFCFBB80086B463 /* Bolts.framework */,
 				027B003F1AF5C2A8000144EC /* QuartzCore.framework */,
 				027B003B1AF5C285000144EC /* SystemConfiguration.framework */,
 				027B00371AF5C25F000144EC /* MobileCoreServices.framework */,
