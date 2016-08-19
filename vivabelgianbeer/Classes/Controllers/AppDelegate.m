@@ -43,8 +43,15 @@
     // Initialize parse
     VivabelgianbeerKeys *keys=[[VivabelgianbeerKeys alloc] init] ;
         // Secret Id/Key, stored in keystore by cocoapods-keys
+    /*
     [Parse setApplicationId:keys.parseApplicationId
                   clientKey:keys.parseClientKey];
+     */
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+        configuration.applicationId = keys.parseApplicationId;
+        configuration.clientKey = @"";
+        configuration.server = @"https://vivabelgianbeer-server.herokuapp.com/parse";
+    }]];
     
     // [PFUser enableAutomaticUser];
     PFACL *defaultACL = [PFACL ACL];
