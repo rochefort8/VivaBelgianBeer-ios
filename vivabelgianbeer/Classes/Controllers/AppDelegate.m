@@ -40,7 +40,7 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    // Initialize parse
+    // ---------- Parse server ----------
     VivabelgianbeerKeys *keys=[[VivabelgianbeerKeys alloc] init] ;
         // Secret Id/Key, stored in keystore by cocoapods-keys
     /*
@@ -53,11 +53,11 @@
         configuration.server = @"https://vivabelgianbeer-server.herokuapp.com/parse";
     }]];
     
-    // [PFUser enableAutomaticUser];
+    [PFUser enableAutomaticUser];
     PFACL *defaultACL = [PFACL ACL];
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 
-    // Use Reachability to monitor connectivity
+    // ---------- Reachability ----------
     [self monitorReachability];
     
     // Request for local notification permission
@@ -68,9 +68,9 @@
         [application registerForRemoteNotifications];
     }
 
-    // Check for Update - Using "harpy"
+    // ---------- Check for Update / Using "harpy" ----------
         // Set the App ID for your app
-    [[Harpy sharedInstance] setAppID:@"998259806"];
+//    [[Harpy sharedInstance] setAppID:@"998259806"];
     
         // Set the UIViewController that will present an instance of UIAlertController
     [[Harpy sharedInstance] setPresentingViewController:_rootViewController];
@@ -205,7 +205,12 @@ BOOL bAcceptOrientationLandscape = false ;
     bAcceptOrientationLandscape = flag ;
 }
 
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 90000
+- (NSUInteger)
+#else
+- (UIInterfaceOrientationMask)
+#endif
+application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
     NSUInteger orientations = UIInterfaceOrientationMaskAll;
 
     if(self.window.rootViewController){
