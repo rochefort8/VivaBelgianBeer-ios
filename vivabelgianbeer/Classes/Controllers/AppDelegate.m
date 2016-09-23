@@ -74,12 +74,15 @@
     [[Harpy sharedInstance] setAppID:@"998259806"];
     // FIXME : Doesn't work when [PFUser enableAUtimaticUser] is running,
     // Maybe because rootViewController becomes invalid....
-    //
+
+    /* 
+     * Move to doLogin()
         // Set the UIViewController that will present an instance of UIAlertController
     [[Harpy sharedInstance] setPresentingViewController:_rootViewController];
     
         // Perform check for new version of your app
     [[Harpy sharedInstance] checkVersion];
+    */
     
     // Use background fetch
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
@@ -154,6 +157,12 @@
     // Change root view controller for vivabelgianbeer tabbar
     self.window.rootViewController = [[TabBarController alloc] init];
     [self.window makeKeyAndVisible];
+
+    // Perform check for new version of your app
+    [[Harpy sharedInstance] setPresentingViewController:self.window.rootViewController];
+ 
+    // FIXME : Comment out below until ID for this app is assigned.
+    // [[Harpy sharedInstance] checkVersion];
 }
 
 - (void)doLogout {
