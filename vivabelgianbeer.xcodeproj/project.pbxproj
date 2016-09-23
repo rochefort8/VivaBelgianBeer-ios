@@ -34,8 +34,6 @@
 		02744EA21B1415AC00FF8962 /* PlaceholderPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */; };
 		02744EA81B1B2D8800FF8962 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */; };
 		02744EAE1B1C530400FF8962 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EAD1B1C530400FF8962 /* NSString+Utilities.m */; };
-		02744EB71B48F62700FF8962 /* Harpy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EB51B48F62700FF8962 /* Harpy.m */; };
-		02744EB91B48F66000FF8962 /* Harpy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 02744EB81B48F66000FF8962 /* Harpy.bundle */; };
 		027B000A1AF53792000144EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 027BFFF91AF53792000144EC /* AppDelegate.m */; };
 		027B000D1AF53792000144EC /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027BFFFF1AF53792000144EC /* QuizViewController.m */; };
 		027B000E1AF53792000144EC /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B00011AF53792000144EC /* TabBarController.m */; };
@@ -264,9 +262,6 @@
 		02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		02744EAC1B1C530400FF8962 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
 		02744EAD1B1C530400FF8962 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
-		02744EB41B48F62700FF8962 /* Harpy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Harpy.h; sourceTree = "<group>"; };
-		02744EB51B48F62700FF8962 /* Harpy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Harpy.m; sourceTree = "<group>"; };
-		02744EB81B48F66000FF8962 /* Harpy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Harpy.bundle; sourceTree = "<group>"; };
 		027B00001AF53792000144EC /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		027B00011AF53792000144EC /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		027B00051AF53792000144EC /* UmanatsuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UmanatsuViewController.h; sourceTree = "<group>"; };
@@ -624,16 +619,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		02744EB21B48F62700FF8962 /* Harpy */ = {
-			isa = PBXGroup;
-			children = (
-				02744EB81B48F66000FF8962 /* Harpy.bundle */,
-				02744EB41B48F62700FF8962 /* Harpy.h */,
-				02744EB51B48F62700FF8962 /* Harpy.m */,
-			);
-			path = Harpy;
-			sourceTree = "<group>";
-		};
 		027B00071AF53792000144EC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,7 +781,6 @@
 		02B5751E1AFCDC3C00AF1A1B /* External */ = {
 			isa = PBXGroup;
 			children = (
-				02744EB21B48F62700FF8962 /* Harpy */,
 				02B5751F1AFCDC3C00AF1A1B /* MBProgressHUD */,
 				02B575231AFCDC3C00AF1A1B /* Reachability */,
 				02B575261AFCDC3C00AF1A1B /* TTTTimeIntervalFormatter */,
@@ -1261,7 +1245,6 @@
 				02B5760A1AFCE45200AF1A1B /* ActivityFeedBlank@2x.png in Resources */,
 				02B576521AFCE45200AF1A1B /* iconPics.png in Resources */,
 				02B576701AFCE45200AF1A1B /* titleFindFriends.png in Resources */,
-				02744EB91B48F66000FF8962 /* Harpy.bundle in Resources */,
 				02B576251AFCE45200AF1A1B /* buttonCamera@2x.png in Resources */,
 				02B576241AFCE45200AF1A1B /* buttonCamera.png in Resources */,
 				02B5762A1AFCE45200AF1A1B /* buttonFacebookSelected.png in Resources */,
@@ -1441,7 +1424,6 @@
 				027B000E1AF53792000144EC /* TabBarController.m in Sources */,
 				021DDF9D1AF67D7C00666DF3 /* QuizResultViewController.m in Sources */,
 				02CF6FF01BA3A59700BF4F6A /* SchoolRouteListCell.m in Sources */,
-				02744EB71B48F62700FF8962 /* Harpy.m in Sources */,
 				029FB5961B7644B50038D018 /* CommentViewController.m in Sources */,
 				02D0D6B71B993A1700559118 /* TochikujiViewCell.m in Sources */,
 				020DD46C1AFDE53400BAFCD3 /* RegistrationViewController.m in Sources */,

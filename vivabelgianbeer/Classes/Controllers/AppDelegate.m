@@ -70,7 +70,7 @@
 
     // ---------- Check for Update / Using "harpy" ----------
         // Set the App ID for your app
-//    [[Harpy sharedInstance] setAppID:@"998259806"];
+    [[Harpy sharedInstance] setAppID:@"998259806"];
     
         // Set the UIViewController that will present an instance of UIAlertController
     [[Harpy sharedInstance] setPresentingViewController:_rootViewController];
