@@ -14,50 +14,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="351" height="560.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="2016年度東京東筑会懇親会" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmu-q6-qOt" userLabel="2016年度東京東筑会懇親会">
-                        <rect key="frame" x="0.0" y="-40" width="351" height="22"/>
-                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="今日のあなたにピッタリなベルギービールをオススメします！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmu-q6-qOt" userLabel="ようこそ">
+                        <rect key="frame" x="20" y="0.0" width="311" height="90"/>
+                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="30"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10月29日 土曜日!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccD-2L-M9M" userLabel="10月29日 土曜日">
-                        <rect key="frame" x="80" y="-8" width="271" height="18"/>
-                        <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
-                        <color key="textColor" red="0.53333333329999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="TKPガーデンシティ品川にて" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="cFF-k3-qsf" userLabel="TKPガーデンシティ品川にて">
-                        <rect key="frame" x="80" y="15" width="271" height="18"/>
-                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Tochikun1" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-fq-ax3">
-                        <rect key="frame" x="20" y="-10" width="60" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="Ov3-9M-7HH"/>
-                            <constraint firstAttribute="width" constant="60" id="Yyp-IN-SOd"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="cFF-k3-qsf" firstAttribute="top" secondItem="ccD-2L-M9M" secondAttribute="bottom" constant="5" id="M6C-VR-4mS"/>
-                    <constraint firstAttribute="trailing" secondItem="ccD-2L-M9M" secondAttribute="trailing" id="T1y-yG-AIJ"/>
-                    <constraint firstAttribute="trailing" secondItem="Qmu-q6-qOt" secondAttribute="trailing" id="Usi-dD-PSb"/>
-                    <constraint firstItem="Qmu-q6-qOt" firstAttribute="leading" secondItem="igH-xa-SAT" secondAttribute="leading" id="coJ-bt-PlW"/>
-                    <constraint firstItem="cFF-k3-qsf" firstAttribute="leading" secondItem="igH-xa-SAT" secondAttribute="leading" constant="80" id="d00-NE-XzW"/>
-                    <constraint firstItem="VdW-fq-ax3" firstAttribute="top" secondItem="Qmu-q6-qOt" secondAttribute="bottom" constant="8" id="icm-VT-699"/>
-                    <constraint firstItem="ccD-2L-M9M" firstAttribute="top" secondItem="Qmu-q6-qOt" secondAttribute="bottom" constant="10" id="lMH-4s-FqT"/>
-                    <constraint firstAttribute="trailing" secondItem="cFF-k3-qsf" secondAttribute="trailing" id="qBo-a8-Xg3"/>
-                    <constraint firstItem="ccD-2L-M9M" firstAttribute="leading" secondItem="VdW-fq-ax3" secondAttribute="trailing" id="qJe-Xr-NdC"/>
-                    <constraint firstItem="VdW-fq-ax3" firstAttribute="leading" secondItem="igH-xa-SAT" secondAttribute="leading" constant="20" id="qub-Dc-I24"/>
-                    <constraint firstItem="Qmu-q6-qOt" firstAttribute="top" secondItem="igH-xa-SAT" secondAttribute="top" constant="-40" id="v31-bj-wOk"/>
+                    <constraint firstItem="Qmu-q6-qOt" firstAttribute="leading" secondItem="igH-xa-SAT" secondAttribute="leading" constant="20" id="fRr-LE-Nbt"/>
+                    <constraint firstItem="Qmu-q6-qOt" firstAttribute="top" secondItem="igH-xa-SAT" secondAttribute="top" id="hE8-T4-yfy"/>
+                    <constraint firstAttribute="trailing" secondItem="Qmu-q6-qOt" secondAttribute="trailing" constant="20" id="j1c-YP-osf"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="235.5" y="218.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Image_Tochikun1" width="250" height="267"/>
-    </resources>
 </document>

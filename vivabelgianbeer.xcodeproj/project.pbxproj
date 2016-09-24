@@ -31,6 +31,8 @@
 		025EEF7C1B01A607005D40DF /* NewsFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EEF7B1B01A607005D40DF /* NewsFullViewController.m */; };
 		025EEF7F1B01A756005D40DF /* NewsFullCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EEF7E1B01A756005D40DF /* NewsFullCell.m */; };
 		025EEF811B01A796005D40DF /* NewsFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025EEF801B01A796005D40DF /* NewsFull.xib */; };
+		02641E201D96067D00CF313A /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E1F1D96067D00CF313A /* QuestionViewController.m */; };
+		02641E221D9621A100CF313A /* QuestionContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E211D9621A100CF313A /* QuestionContent.m */; };
 		02744EA21B1415AC00FF8962 /* PlaceholderPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */; };
 		02744EA81B1B2D8800FF8962 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */; };
 		02744EAE1B1C530400FF8962 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EAD1B1C530400FF8962 /* NSString+Utilities.m */; };
@@ -257,6 +259,10 @@
 		025EEF7D1B01A756005D40DF /* NewsFullCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFullCell.h; sourceTree = "<group>"; };
 		025EEF7E1B01A756005D40DF /* NewsFullCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFullCell.m; sourceTree = "<group>"; };
 		025EEF801B01A796005D40DF /* NewsFull.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsFull.xib; sourceTree = "<group>"; };
+		02641E1E1D96067D00CF313A /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		02641E1F1D96067D00CF313A /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		02641E211D9621A100CF313A /* QuestionContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionContent.m; sourceTree = "<group>"; };
+		02641E231D9621D700CF313A /* QuestionContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionContent.h; sourceTree = "<group>"; };
 		02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PlaceholderPhoto@2x.png"; sourceTree = "<group>"; };
 		02744EA61B1B2D8800FF8962 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
@@ -533,6 +539,10 @@
 				025EEF711B018C7C005D40DF /* MessageViewCell.xib */,
 				02A127401B5CB4F8001C384F /* AdWebViewController.h */,
 				02A127411B5CB4F8001C384F /* AdWebViewController.m */,
+				02641E1E1D96067D00CF313A /* QuestionViewController.h */,
+				02641E1F1D96067D00CF313A /* QuestionViewController.m */,
+				02641E211D9621A100CF313A /* QuestionContent.m */,
+				02641E231D9621D700CF313A /* QuestionContent.h */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1432,6 +1442,7 @@
 				02A127421B5CB4F8001C384F /* AdWebViewController.m in Sources */,
 				02B575811AFCE12C00AF1A1B /* PAPPhotoDetailsHeaderView.m in Sources */,
 				0209196C1B10A3350047A573 /* LikeListExViewController.m in Sources */,
+				02641E221D9621A100CF313A /* QuestionContent.m in Sources */,
 				02D0D6BD1B9941D800559118 /* TochikujiResultViewController.m in Sources */,
 				021DDF971AF6624000666DF3 /* HomeViewController.m in Sources */,
 				0243FA661AF530B3009D959E /* main.m in Sources */,
@@ -1453,6 +1464,7 @@
 				02B5757A1AFCE12C00AF1A1B /* PAPHomeViewController.m in Sources */,
 				02D0537D1B759B5400983E2C /* KitaKyushuFullViewController.m in Sources */,
 				02D0D6B01B992FD400559118 /* TochikujiViewController.m in Sources */,
+				02641E201D96067D00CF313A /* QuestionViewController.m in Sources */,
 				02AC09081AFF72B600A93F09 /* LoginViewController.m in Sources */,
 				02744EA81B1B2D8800FF8962 /* WelcomeViewController.m in Sources */,
 				025EEF761B019413005D40DF /* MessageViewController.m in Sources */,

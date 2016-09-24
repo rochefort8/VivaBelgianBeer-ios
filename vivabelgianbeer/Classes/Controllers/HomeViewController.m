@@ -11,46 +11,33 @@
 #import "MessageViewController.h"
 #import "AdWebViewController.h"
 #import "HomeViewCell.h"
+#import "QuestionContent.h"
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSMutableArray *messageList;
+/* UI components */
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
-@property (strong, nonatomic) PFObject  *messageObject ;
-@property (strong, nonatomic) UIImage   *messageImage ;
-@property (nonatomic) NSString   *messageContent ;
-@property (nonatomic) NSString   *messageTitle ;
-@property (nonatomic) NSInteger  dateInterval ;
-@property (strong, nonatomic) UIImage   *countDownImage ;
-@property NSInteger enterDateIntervalDebugModeCount ;
-@property BOOL isDateInternalDebugMode ;
-@property NSInteger debugDateInterval ;
+// Question list
+@property int totalQuestionCount;
+@property (strong, nonatomic) NSMutableArray *questionList;
 
-// Banner Advertizement
-@property (nonatomic) bool isAdPublishing ;
-@property (strong, nonatomic) NSMutableArray *adList;
-@property (nonatomic) NSInteger adIndex ;
 
-@property (nonatomic) NSString   *adMessage ;
-@property (nonatomic) NSString   *adURLString ;
-
-@property (nonatomic) NSString   *adText ;
-@property NSInteger adTextStartIndex ;
-@property (nonatomic) NSTimer *adTimer ;
-
+// Data from Parse server
 typedef void (^CallbackHandler)(NSError *error);
 - (void)loadData:(CallbackHandler)handler ;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (nonatomic) CGFloat viewHeight ;
 
+/*
 enum {
     SEGUE_TO_MESSAGEVIEW = 0,
     SEGUE_TO_AD_WEBVIEW
 } ;
 @property (nonatomic) NSInteger segueTo ;
-
+*/
 @end
 
 @interface HomeViewController () <PFLogInViewControllerDelegate,
@@ -78,61 +65,83 @@ enum {
                 self.navigationController.navigationBar.frame.size.height -
                 self.tabBarController.tabBar.frame.size.height;
     
-    // Load message from server
+    // Question list
+    self.totalQuestionCount = 3 ;
+    self.questionList = [[NSMutableArray alloc] init];
+    for (int i = 0;i < self.totalQuestionCount;i++) {
+        QuestionContent *content = [[QuestionContent alloc] init] ;
+        content.object = nil ;
+        [self.questionList addObject:content];
+    }
+    
+    // Activity Indicator
+    [self.activityIndicator setHidesWhenStopped:YES];
+    [self.activityIndicator startAnimating];
+
+    // Load data from server
     [self loadData:^(NSError *error) {
         if (!error){
-            // No error
+            NSLog (@"Title: %lu ",[self.questionList count]) ;
+        
+            
+            for (int i = 0; i < [self.questionList count];i++) {
+//                QuestionContent *content = [self.questionList objectAtIndex:i] ;
+                PFObject *object = [self.questionList objectAtIndex:i];
+                
+                NSLog (@"Title: %@ / Text %@",[object objectForKey:@"title"],[object objectForKey:@"text"]);
+            }
+            
+            
+              [self.activityIndicator stopAnimating ];
+              [self.startButton setEnabled:YES] ;
         } else {
-            // Something happened..
+            [self.activityIndicator stopAnimating ];
+            [self.startButton setEnabled:YES] ;
         }
     }];
 
 }
 
 - (void)loadData:(CallbackHandler)handler {
-    // Load news from parse
-    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"QuestionList"];
     [query orderByDescending:@"_created_at"];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
-            NSLog(@"HomeViewController, Can't get first object") ;
-            /*
-             [self.messageActivityIndicator stopAnimating ];
-             */
+            NSLog(@"[QuestionList] Error");
             if (handler) {
-                handler(error);
+                handler(error) ;
             }
-            return ;
+            return;
         }
-        
-        if ([[self.messageObject objectId] isEqualToString:[object objectId]]) {
-            NSLog(@"[Home] No updates found.") ;
-
+        NSMutableArray *latestList = [objects mutableCopy];
+        bool updated = false ;
+        if ([latestList count] == [self.questionList count]) {
+            for (int i = 0;i < [latestList count];i++) {
+                PFObject *latest  = [latestList objectAtIndex:i] ;
+                PFObject *current = [self.questionList objectAtIndex:i] ;
+                if ([[latest objectId] isEqualToString:[current objectId]]) {
                     // Continue..
-            if (handler) {
-                handler(error);
+                } else {
+                    NSLog (@"String is different %@ / %@",[latest objectId],[current objectId]) ;
+                    updated = true ;
+                    break ;
+                }
             }
         } else {
-            NSLog (@"[Home]String is different %@ / %@",[object objectId],[self.messageObject objectId]) ;
-            
-            self.messageObject = object ;
-            self.messageContent = [object objectForKey:@"message"];
-            self.messageTitle = [object objectForKey:@"title"];
+            NSLog (@"Number is different") ;
+            updated = true ;
+        }
         
-            PFFile *imageFile = [object objectForKey:@"image"];
-            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                if (!error){
-                    UIImage *image = [UIImage imageWithData:data];
-                    self.messageImage = image ;
-                    NSLog(@"Got image");
-                } else {
-                    NSLog(@"no data!");
-                }
-                [self.tableView reloadData];
-                if (handler) {
-                    handler(error);
-                }
-            }];
+        // Reload view only when data had been really changed
+        if (updated == true) {
+            NSLog (@"[QuestionList] data updated, loading...") ;
+            self.questionList = [objects mutableCopy];
+        } else {
+            NSLog(@"[QuestionList] No updates found.") ;
+        }
+        if (handler) {
+            handler(error) ;
         }
     }];
 }
@@ -145,6 +154,7 @@ enum {
         } else {
             // Something happened..
         }
+        [sender endRefreshing] ;
     }];
 }
 
@@ -171,10 +181,11 @@ enum {
     [cell.messageButton addTarget:self action:@selector(onMessageButton:) forControlEvents:UIControlEventTouchUpInside];
     [cell.countdownButton addTarget:self action:@selector(onCountdownButton:) forControlEvents:UIControlEventTouchUpInside];
     [cell.adButton addTarget:self action:@selector(onAdButton:) forControlEvents:UIControlEventTouchUpInside];
-*/
+
     cell.messageContent.text = self.messageContent ;
     cell.countDownImage.image = self.countDownImage ;
     cell.adText.text = self.adText;
+     */
     return cell;
 }
 
@@ -188,12 +199,13 @@ enum {
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+/*
     switch (self.segueTo) {
             
         default:
             break;
     }
+ */
 }
 
 #pragma mark -
