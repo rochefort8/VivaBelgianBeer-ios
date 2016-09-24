@@ -22,22 +22,15 @@
 
 // Question list
 @property int totalQuestionCount;
+    // All questions on server
 @property (strong, nonatomic) NSMutableArray *questionList;
 
-
-// Data from Parse server
+// Getting data from Parse server
 typedef void (^CallbackHandler)(NSError *error);
 - (void)loadData:(CallbackHandler)handler ;
 
 @property (nonatomic) CGFloat viewHeight ;
 
-/*
-enum {
-    SEGUE_TO_MESSAGEVIEW = 0,
-    SEGUE_TO_AD_WEBVIEW
-} ;
-@property (nonatomic) NSInteger segueTo ;
-*/
 @end
 
 @interface HomeViewController () <PFLogInViewControllerDelegate,
@@ -53,9 +46,9 @@ enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Tableview initialization
     self.tableView.delegate = self;
     self.tableView.dataSource = self ;
-
     UINib *nib = [UINib nibWithNibName:HomeViewCellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"HomeViewCell"];
 
