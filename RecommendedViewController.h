@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BeerContent.h"
 
-@interface RecommendedViewController : UIViewController
+@interface RecommendedViewController : UIViewController {
+    BeerContent *_recommendedBeer;
+}
+
+@property (strong, nonatomic) BeerContent *recommendedBeer;
 
 @end

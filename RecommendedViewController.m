@@ -10,13 +10,26 @@
 
 @interface RecommendedViewController ()
 
+// UI components
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *name_jp;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *beerDescription;
+
 @end
 
 @implementation RecommendedViewController
+@synthesize recommendedBeer = _recommendedBeer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]];
+    
+    self.name.text              = [self.recommendedBeer getName] ;
+    self.name_jp.text           = [self.recommendedBeer getName_JP];
+    self.beerDescription.text   = [self.recommendedBeer getDescription];
+    self.image.image            = [self.recommendedBeer getImage];
 }
 
 - (void)didReceiveMemoryWarning {

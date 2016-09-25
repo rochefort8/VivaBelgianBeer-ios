@@ -34,6 +34,7 @@
 		02641E201D96067D00CF313A /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E1F1D96067D00CF313A /* QuestionViewController.m */; };
 		02641E221D9621A100CF313A /* QuestionContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E211D9621A100CF313A /* QuestionContent.m */; };
 		02641E371D976E8200CF313A /* RecommendedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E361D976E8200CF313A /* RecommendedViewController.m */; };
+		02641E3A1D97B3CA00CF313A /* BeerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E391D97B3CA00CF313A /* BeerContent.m */; };
 		02744EA21B1415AC00FF8962 /* PlaceholderPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */; };
 		02744EA81B1B2D8800FF8962 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */; };
 		02744EAE1B1C530400FF8962 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EAD1B1C530400FF8962 /* NSString+Utilities.m */; };
@@ -266,6 +267,8 @@
 		02641E231D9621D700CF313A /* QuestionContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionContent.h; sourceTree = "<group>"; };
 		02641E351D976E8200CF313A /* RecommendedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendedViewController.h; path = ../../../RecommendedViewController.h; sourceTree = "<group>"; };
 		02641E361D976E8200CF313A /* RecommendedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendedViewController.m; path = ../../../RecommendedViewController.m; sourceTree = "<group>"; };
+		02641E381D97B3B800CF313A /* BeerContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeerContent.h; sourceTree = "<group>"; };
+		02641E391D97B3CA00CF313A /* BeerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerContent.m; sourceTree = "<group>"; };
 		02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PlaceholderPhoto@2x.png"; sourceTree = "<group>"; };
 		02744EA61B1B2D8800FF8962 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
@@ -548,6 +551,8 @@
 				02641E231D9621D700CF313A /* QuestionContent.h */,
 				02641E351D976E8200CF313A /* RecommendedViewController.h */,
 				02641E361D976E8200CF313A /* RecommendedViewController.m */,
+				02641E381D97B3B800CF313A /* BeerContent.h */,
+				02641E391D97B3CA00CF313A /* BeerContent.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1437,6 +1442,7 @@
 				02B575291AFCDC3C00AF1A1B /* MBProgressHUD.m in Sources */,
 				025EEF7F1B01A756005D40DF /* NewsFullCell.m in Sources */,
 				027B000E1AF53792000144EC /* TabBarController.m in Sources */,
+				02641E3A1D97B3CA00CF313A /* BeerContent.m in Sources */,
 				021DDF9D1AF67D7C00666DF3 /* QuizResultViewController.m in Sources */,
 				02CF6FF01BA3A59700BF4F6A /* SchoolRouteListCell.m in Sources */,
 				029FB5961B7644B50038D018 /* CommentViewController.m in Sources */,

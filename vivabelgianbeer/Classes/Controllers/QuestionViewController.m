@@ -9,6 +9,7 @@
 #import "QuestionViewController.h"
 #import "QuestionContent.h"
 #import "RecommendedViewController.h"
+#import "BeerContent.h"
 
 @interface QuestionViewController ()
 
@@ -22,6 +23,16 @@
 - (void)setNextQuestionView ;
 @property NSInteger index ;
 
+// Getting data from Parse server
+typedef void (^CallbackHandler)(NSError *error);
+- (void)loadData:(CallbackHandler)handler ;
+
+// Recommended Beer
+- (void)chooseRecommendedBeer:(CallbackHandler)handler;
+@property (strong, nonatomic) BeerContent *recommendedBeer ;
+
+@property (strong, nonatomic) NSMutableArray *itemList;
+
 @end
 const NSInteger kNumberOfQuestions = 3;
 
@@ -31,6 +42,7 @@ const NSInteger kNumberOfQuestions = 3;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.recommendedBeer= [[BeerContent alloc] init] ;
     self.index = 0 ;
     [self setQuestionView] ;
 }
@@ -41,7 +53,7 @@ const NSInteger kNumberOfQuestions = 3;
 }
 
 - (IBAction)onClickAnswer1:(id)sender {
-    [self setQuestionView] ;
+    [self setNextQuestionView] ;
 }
 
 - (IBAction)onClickAnswer2:(id)sender {
@@ -64,10 +76,53 @@ const NSInteger kNumberOfQuestions = 3;
 
 - (void)findBeer {
 
-    // Next view
-    RecommendedViewController *ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"recommendedView"];
-    [self.navigationController pushViewController:ViewController animated:YES];
+    [self loadData:^(NSError *error) {
+
+        if (!error){
+            [self chooseRecommendedBeer:^(NSError *error) {
+                if (!error) {
+                    // Next view
+                    RecommendedViewController *ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"recommendedView"];
+                    ViewController.recommendedBeer = _recommendedBeer;
+                    [self.navigationController pushViewController:ViewController animated:YES];
+                    
+                } else {
+                    
+                }
+            }];
+        } else {
+            // Error
+        }
+
+    }];
+}
+
+- (void)chooseRecommendedBeer:(CallbackHandler)handler {
     
+    // Find best one
+        // At this moment, algorithm is just random in list
+    int itemNo = arc4random() % [self.itemList count] ;
+    PFObject *object = [self.itemList objectAtIndex:itemNo] ;
+    self.recommendedBeer.object = object ;
+        
+    //NSString *name = [object objectForKey:@"name"] ;
+    //NSString *name_jp = [object objectForKey:@"name_jp"] ;
+    
+    PFFile *image = [object objectForKey:@"image"];
+    
+    [image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error){
+            NSLog(@"Got image!");
+            self.recommendedBeer.image = [UIImage imageWithData:data];
+        } else {
+            NSLog(@"no data!");
+            self.recommendedBeer.image = nil ;
+        }
+        if (handler) {
+            handler (nil) ;
+        }
+    }];
+
 }
 
 - (void)setQuestionView {
@@ -77,7 +132,7 @@ const NSInteger kNumberOfQuestions = 3;
     self.image.image    = [content getImage];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -85,6 +140,50 @@ const NSInteger kNumberOfQuestions = 3;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
+
+- (void)loadData:(CallbackHandler)handler {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"BeerList"];
+    [query orderByDescending:@"_created_at"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"[itemList] Error");
+            if (handler) {
+                handler(error) ;
+            }
+            return;
+        }
+        NSMutableArray *latestList = [objects mutableCopy];
+        bool updated = false ;
+        if ([latestList count] == [self.itemList count]) {
+            for (int i = 0;i < [latestList count];i++) {
+                PFObject *latest  = [latestList objectAtIndex:i] ;
+                PFObject *current = [self.itemList objectAtIndex:i] ;
+                if ([[latest objectId] isEqualToString:[current objectId]]) {
+                    // Continue..
+                } else {
+                    NSLog (@"String is different %@ / %@",[latest objectId],[current objectId]) ;
+                    updated = true ;
+                    break ;
+                }
+            }
+        } else {
+            NSLog (@"Number is different") ;
+            updated = true ;
+        }
+        
+        // Reload view only when data had been really changed
+        if (updated == true) {
+            NSLog (@"[itemList] data updated, loading...") ;
+            self.itemList = [objects mutableCopy];
+        } else {
+            NSLog(@"[itemList] No updates found.") ;
+        }
+        if (handler) {
+            handler(error) ;
+        }
+    }];
+}
 
 @end

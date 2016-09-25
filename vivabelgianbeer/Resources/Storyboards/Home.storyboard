@@ -276,6 +276,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="おすすめはコチラ！" id="V4a-Vk-TUo"/>
+                    <connections>
+                        <outlet property="beerDescription" destination="gn9-n2-jjs" id="eOH-m7-Doq"/>
+                        <outlet property="image" destination="HfC-yB-UpJ" id="FbE-oZ-wns"/>
+                        <outlet property="name" destination="QB8-oZ-pzc" id="xMd-E4-Yy6"/>
+                        <outlet property="name_jp" destination="UP6-hj-Nmw" id="4Uy-4I-Ab3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGP-Dz-wzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
