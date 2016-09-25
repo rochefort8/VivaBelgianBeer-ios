@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionViewController : UIViewController
+@interface QuestionViewController : UIViewController {
+    NSMutableArray *_questions ;
+}
+
+@property (strong, nonatomic) NSMutableArray *questions;
 
 @end

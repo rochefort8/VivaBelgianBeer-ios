@@ -12,6 +12,7 @@
 #import "AdWebViewController.h"
 #import "HomeViewCell.h"
 #import "QuestionContent.h"
+#import "QuestionViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -20,18 +21,24 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
-// Question list
-@property int totalQuestionCount;
-    // All questions on server
-@property (strong, nonatomic) NSMutableArray *questionList;
-
 // Getting data from Parse server
 typedef void (^CallbackHandler)(NSError *error);
 - (void)loadData:(CallbackHandler)handler ;
 
+// Question list
+@property int totalQuestionCount;
+    // All questions on server
+@property (strong, nonatomic) NSMutableArray *questionList;
+@property (strong, nonatomic) NSMutableArray *questions;
+
+- (void)setQuestionsFromList:(CallbackHandler)handler ;
+
 @property (nonatomic) CGFloat viewHeight ;
+@property bool initialLoad ;
 
 @end
+
+int table[20];
 
 @interface HomeViewController () <PFLogInViewControllerDelegate,
             PFSignUpViewControllerDelegate>
@@ -45,6 +52,9 @@ typedef void (^CallbackHandler)(NSError *error);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // General initialzation
+    self.initialLoad = true ;
     
     // Tableview initialization
     self.tableView.delegate = self;
@@ -60,11 +70,11 @@ typedef void (^CallbackHandler)(NSError *error);
     
     // Question list
     self.totalQuestionCount = 3 ;
-    self.questionList = [[NSMutableArray alloc] init];
+    self.questions = [[NSMutableArray alloc] init];
     for (int i = 0;i < self.totalQuestionCount;i++) {
         QuestionContent *content = [[QuestionContent alloc] init] ;
         content.object = nil ;
-        [self.questionList addObject:content];
+        [self.questions addObject:content];
     }
     
     // Activity Indicator
@@ -72,21 +82,24 @@ typedef void (^CallbackHandler)(NSError *error);
     [self.activityIndicator startAnimating];
 
     // Load data from server
+    
+    /*
+     For remove warning,
+     "Capturing self strongly in this block is likely to lead to a retain cycle"
+     */
+    __unsafe_unretained typeof(self) weakSelf = self;
+
     [self loadData:^(NSError *error) {
         if (!error){
-            NSLog (@"Title: %lu ",[self.questionList count]) ;
-        
-            
-            for (int i = 0; i < [self.questionList count];i++) {
-//                QuestionContent *content = [self.questionList objectAtIndex:i] ;
-                PFObject *object = [self.questionList objectAtIndex:i];
-                
-                NSLog (@"Title: %@ / Text %@",[object objectForKey:@"title"],[object objectForKey:@"text"]);
-            }
-            
-            
-              [self.activityIndicator stopAnimating ];
-              [self.startButton setEnabled:YES] ;
+            [self setQuestionsFromList:^(NSError *error) {
+                if (!error) {
+                    
+                } else {
+                    
+                }
+                [weakSelf.activityIndicator stopAnimating ];
+                [weakSelf.startButton setEnabled:YES] ;
+            }];
         } else {
             [self.activityIndicator stopAnimating ];
             [self.startButton setEnabled:YES] ;
@@ -94,6 +107,30 @@ typedef void (^CallbackHandler)(NSError *error);
     }];
 
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated] ;
+    
+    
+    if (self.initialLoad == true) {
+        self.initialLoad = false ;
+        return ;
+    }
+    
+    // Called when restart, so change next quiz list
+    __unsafe_unretained typeof(self) weakSelf = self;
+    
+    [self.activityIndicator startAnimating];
+    [self setQuestionsFromList:^(NSError *error) {
+        if (!error){
+            // No error
+        } else {
+            // Something happened..
+        }
+        [weakSelf.activityIndicator stopAnimating];
+    }];
+}
+
 
 - (void)loadData:(CallbackHandler)handler {
     
@@ -137,6 +174,65 @@ typedef void (^CallbackHandler)(NSError *error);
             handler(error) ;
         }
     }];
+}
+
+- (void)setQuestionsFromList:(CallbackHandler)handler {
+    
+    // Store random position in table[]
+    
+    if (self.totalQuestionCount < [self.questionList count]) {
+        for (int i = 0;i < self.totalQuestionCount;) {
+            int rand = arc4random() % [self.questionList count] ;
+            int already_exist = 0 ;
+            for (int j = 0;j < i;j++) {
+                if (table[j] == rand) {
+                    already_exist = 1 ;
+                    break ;
+                }
+            }
+            if (!already_exist) {
+                table[i] = rand ;
+                i++ ;
+            }
+        }
+    } else {
+        for (int i = 0;i < self.totalQuestionCount;) {
+            table[i] = 0 ;
+        }
+    }
+    
+    for (int i = 0;i < self.totalQuestionCount;i++) {
+        QuestionContent *content = [self.questions objectAtIndex:i] ;
+        
+        // Load object in full quiz list at random position
+        PFObject *object = [self.questionList objectAtIndex:table[i]];
+        content.object = object ;
+        [self.questions replaceObjectAtIndex:i withObject:content];
+    }
+    
+    
+    for (int i = 0;i < self.totalQuestionCount;i++) {
+        
+        QuestionContent *content = [self.questions objectAtIndex:i] ;
+        PFObject *object = content.object;
+        
+        PFFile *image = [object objectForKey:@"image"];
+        
+        [image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error){
+                content.image = [UIImage imageWithData:data];
+            } else {
+                NSLog(@"no data!");
+            }
+            // FIXME !!
+            [self.questions replaceObjectAtIndex:i withObject:content] ;
+        }];
+    }
+     
+    // FIXME Should call when all image load are finished..
+    if (handler) {
+        handler (nil) ;
+    }
 }
 
 - (IBAction)onRefresh:(id)sender {
@@ -192,13 +288,8 @@ typedef void (^CallbackHandler)(NSError *error);
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-/*
-    switch (self.segueTo) {
-            
-        default:
-            break;
-    }
- */
+    QuestionViewController *secondViewController = segue.destinationViewController;
+    secondViewController.questions = _questions;
 }
 
 #pragma mark -

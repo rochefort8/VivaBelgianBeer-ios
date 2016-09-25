@@ -107,7 +107,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-u0-rdN" customClass="Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-u0-rdN">
                                 <rect key="frame" x="20" y="134" width="280" height="229"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Questoin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="5fL-bf-o5H">
@@ -123,10 +123,13 @@
                                     <constraint firstAttribute="height" constant="40" id="ykq-47-irm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="16"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="さぁ？">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickAnswer3:" destination="YDd-y7-a9u" eventType="touchUpInside" id="b93-gi-16d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReX-Yc-22Q" userLabel="Choice 2">
                                 <rect key="frame" x="20" y="421" width="280" height="40"/>
@@ -135,12 +138,15 @@
                                     <constraint firstAttribute="height" constant="40" id="Djx-jj-pck"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="16"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="いいえ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickAnswer2:" destination="YDd-y7-a9u" eventType="touchUpInside" id="jJz-Zp-S5b"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2if-n6-Pcj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Subject" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2if-n6-Pcj">
                                 <rect key="frame" x="10" y="74" width="300" height="24"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,10 +159,13 @@
                                     <constraint firstAttribute="height" constant="40" id="s5P-y4-6xm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="16"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="はい">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickAnswer1:" destination="YDd-y7-a9u" eventType="touchUpInside" id="6hi-Df-L9e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -185,7 +194,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="問題" id="vZt-bC-IoS"/>
                     <connections>
-                        <segue destination="oJr-IO-4j6" kind="push" identifier="" id="d07-vL-hY5"/>
+                        <outlet property="image" destination="IEJ-u0-rdN" id="m69-qv-vBp"/>
+                        <outlet property="subject" destination="2if-n6-Pcj" id="xNL-IA-fYC"/>
+                        <outlet property="text" destination="5fL-bf-o5H" id="yxT-7B-uBg"/>
+                        <segue destination="oJr-IO-4j6" kind="push" identifier="toRecommendation" id="d07-vL-hY5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztg-5l-Sdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,7 +207,7 @@
         <!--おすすめはコチラ！-->
         <scene sceneID="Znh-Lo-yHH">
             <objects>
-                <viewController id="oJr-IO-4j6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recommendedView" id="oJr-IO-4j6" customClass="RecommendedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kou-lb-csL"/>
                         <viewControllerLayoutGuide type="bottom" id="V1i-xQ-OPP"/>
@@ -215,6 +227,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onButtonBack:" destination="oJr-IO-4j6" eventType="touchUpInside" id="Fi0-nm-Cfi"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HfC-yB-UpJ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="395"/>

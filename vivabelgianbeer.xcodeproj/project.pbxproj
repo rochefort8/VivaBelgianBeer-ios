@@ -33,6 +33,7 @@
 		025EEF811B01A796005D40DF /* NewsFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025EEF801B01A796005D40DF /* NewsFull.xib */; };
 		02641E201D96067D00CF313A /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E1F1D96067D00CF313A /* QuestionViewController.m */; };
 		02641E221D9621A100CF313A /* QuestionContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E211D9621A100CF313A /* QuestionContent.m */; };
+		02641E371D976E8200CF313A /* RecommendedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E361D976E8200CF313A /* RecommendedViewController.m */; };
 		02744EA21B1415AC00FF8962 /* PlaceholderPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */; };
 		02744EA81B1B2D8800FF8962 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */; };
 		02744EAE1B1C530400FF8962 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EAD1B1C530400FF8962 /* NSString+Utilities.m */; };
@@ -263,6 +264,8 @@
 		02641E1F1D96067D00CF313A /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		02641E211D9621A100CF313A /* QuestionContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionContent.m; sourceTree = "<group>"; };
 		02641E231D9621D700CF313A /* QuestionContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionContent.h; sourceTree = "<group>"; };
+		02641E351D976E8200CF313A /* RecommendedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendedViewController.h; path = ../../../RecommendedViewController.h; sourceTree = "<group>"; };
+		02641E361D976E8200CF313A /* RecommendedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendedViewController.m; path = ../../../RecommendedViewController.m; sourceTree = "<group>"; };
 		02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PlaceholderPhoto@2x.png"; sourceTree = "<group>"; };
 		02744EA61B1B2D8800FF8962 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
@@ -543,6 +546,8 @@
 				02641E1F1D96067D00CF313A /* QuestionViewController.m */,
 				02641E211D9621A100CF313A /* QuestionContent.m */,
 				02641E231D9621D700CF313A /* QuestionContent.h */,
+				02641E351D976E8200CF313A /* RecommendedViewController.h */,
+				02641E361D976E8200CF313A /* RecommendedViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1442,6 +1447,7 @@
 				02A127421B5CB4F8001C384F /* AdWebViewController.m in Sources */,
 				02B575811AFCE12C00AF1A1B /* PAPPhotoDetailsHeaderView.m in Sources */,
 				0209196C1B10A3350047A573 /* LikeListExViewController.m in Sources */,
+				02641E371D976E8200CF313A /* RecommendedViewController.m in Sources */,
 				02641E221D9621A100CF313A /* QuestionContent.m in Sources */,
 				02D0D6BD1B9941D800559118 /* TochikujiResultViewController.m in Sources */,
 				021DDF971AF6624000666DF3 /* HomeViewController.m in Sources */,
