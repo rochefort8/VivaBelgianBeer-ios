@@ -9,6 +9,7 @@ pod 'Parse'
 pod 'ParseUI'
 pod "youtube-ios-player-helper", "~> 0.1.1"
 pod 'Harpy'
+pod 'SVProgressHUD'
 
 plugin 'cocoapods-keys', {
   :project => "VivaBelgianBeer",

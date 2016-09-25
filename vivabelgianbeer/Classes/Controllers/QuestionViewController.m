@@ -10,6 +10,7 @@
 #import "QuestionContent.h"
 #import "RecommendedViewController.h"
 #import "BeerContent.h"
+#import "SVProgressHUD.h"
 
 @interface QuestionViewController ()
 
@@ -75,12 +76,14 @@ const NSInteger kNumberOfQuestions = 3;
 }
 
 - (void)findBeer {
+    [SVProgressHUD showWithStatus:@"探しています。"];
 
     [self loadData:^(NSError *error) {
 
         if (!error){
             [self chooseRecommendedBeer:^(NSError *error) {
                 if (!error) {
+                    
                     // Next view
                     RecommendedViewController *ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"recommendedView"];
                     ViewController.recommendedBeer = _recommendedBeer;
@@ -89,9 +92,11 @@ const NSInteger kNumberOfQuestions = 3;
                 } else {
                     
                 }
+                [SVProgressHUD dismiss];
             }];
         } else {
             // Error
+            [SVProgressHUD dismiss];
         }
 
     }];
