@@ -30,6 +30,7 @@
     self.name_jp.text           = [self.recommendedBeer getName_JP];
     self.beerDescription.text   = [self.recommendedBeer getDescription];
     self.image.image            = [self.recommendedBeer getImage];
+
 }
 
 - (void)didReceiveMemoryWarning {

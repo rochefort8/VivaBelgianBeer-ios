@@ -35,6 +35,7 @@
 		02641E221D9621A100CF313A /* QuestionContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E211D9621A100CF313A /* QuestionContent.m */; };
 		02641E371D976E8200CF313A /* RecommendedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E361D976E8200CF313A /* RecommendedViewController.m */; };
 		02641E3A1D97B3CA00CF313A /* BeerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E391D97B3CA00CF313A /* BeerContent.m */; };
+		02641E3D1DA132E000CF313A /* UILabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 02641E3C1DA132E000CF313A /* UILabelWithPadding.m */; };
 		02744EA21B1415AC00FF8962 /* PlaceholderPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */; };
 		02744EA81B1B2D8800FF8962 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */; };
 		02744EAE1B1C530400FF8962 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 02744EAD1B1C530400FF8962 /* NSString+Utilities.m */; };
@@ -269,6 +270,8 @@
 		02641E361D976E8200CF313A /* RecommendedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendedViewController.m; path = ../../../RecommendedViewController.m; sourceTree = "<group>"; };
 		02641E381D97B3B800CF313A /* BeerContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeerContent.h; sourceTree = "<group>"; };
 		02641E391D97B3CA00CF313A /* BeerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerContent.m; sourceTree = "<group>"; };
+		02641E3B1DA132E000CF313A /* UILabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelWithPadding.h; sourceTree = "<group>"; };
+		02641E3C1DA132E000CF313A /* UILabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelWithPadding.m; sourceTree = "<group>"; };
 		02744EA11B1415AC00FF8962 /* PlaceholderPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PlaceholderPhoto@2x.png"; sourceTree = "<group>"; };
 		02744EA61B1B2D8800FF8962 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		02744EA71B1B2D8800FF8962 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
@@ -553,6 +556,8 @@
 				02641E361D976E8200CF313A /* RecommendedViewController.m */,
 				02641E381D97B3B800CF313A /* BeerContent.h */,
 				02641E391D97B3CA00CF313A /* BeerContent.m */,
+				02641E3B1DA132E000CF313A /* UILabelWithPadding.h */,
+				02641E3C1DA132E000CF313A /* UILabelWithPadding.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1431,6 +1436,7 @@
 				020919541B0B60990047A573 /* SettingsViewController.m in Sources */,
 				020919691B10402A0047A573 /* ChangeUserInfoViewController.m in Sources */,
 				02B575881AFCE12C00AF1A1B /* PAPTabBarController.m in Sources */,
+				02641E3D1DA132E000CF313A /* UILabelWithPadding.m in Sources */,
 				027B00491AF63C09000144EC /* QuizQuestionViewController.m in Sources */,
 				02AC090B1B007FC800A93F09 /* QuizContent.m in Sources */,
 				02CF6FED1BA3A55A00BF4F6A /* SchoolRouteViewController.m in Sources */,
