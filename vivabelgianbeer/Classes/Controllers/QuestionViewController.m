@@ -15,9 +15,9 @@
 @interface QuestionViewController ()
 
 // UI Components
-@property (weak, nonatomic) IBOutlet UILabel *subject;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *text;
+@property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
 
 // Question view
 - (void)setQuestionView ;
@@ -131,8 +131,11 @@ const NSInteger kNumberOfQuestions = 3;
 }
 
 - (void)setQuestionView {
+    
+    self.naviTitle.title = [NSString stringWithFormat:@"質問:その%d",self.index + 1];
+    
     QuestionContent *content = [self.questions objectAtIndex:self.index] ;
-    self.subject.text   = [content getTitle] ;
+//    self.subject.text   = [content getTitle] ;
     self.text.text      = [content getText];
     self.image.image    = [content getImage];
 }
