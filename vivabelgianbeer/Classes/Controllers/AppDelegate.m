@@ -29,8 +29,9 @@
 
 @end
 
-@implementation AppDelegate
+static NSString *const appId = @"978587006" ;
 
+@implementation AppDelegate
 @synthesize networkStatus;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -71,7 +72,7 @@
     // ---------- Check for Update / Using "harpy" ----------
         // Set the App ID for your app
     
-    [[Harpy sharedInstance] setAppID:@"998259806"];
+    [[Harpy sharedInstance] setAppID:appId];
     // FIXME : Doesn't work when [PFUser enableAUtimaticUser] is running,
     // Maybe because rootViewController becomes invalid....
 
