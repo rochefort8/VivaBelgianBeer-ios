@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WNi-0U-ukP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WNi-0U-ukP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--PhotoRelay-->
         <scene sceneID="vg9-yI-L72">
             <objects>
                 <navigationController storyboardIdentifier="PhotoRelay" definesPresentationContext="YES" id="WNi-0U-ukP" userLabel="PhotoRelay" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="写真メッセージ" image="Icon_photorelay" id="xeH-bH-pte"/>
+                    <tabBarItem key="tabBarItem" title="投稿" image="Icon_photorelay" id="xeH-bH-pte"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pEd-Vp-w7j">
                         <autoresizingMask key="autoresizingMask"/>
@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-375" y="-6"/>
         </scene>
-        <!--写真メッセージ-->
+        <!--投稿-->
         <scene sceneID="teT-SO-VAX">
             <objects>
                 <tableViewController id="Ge8-Ea-C9I" customClass="PAPHomeViewController" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                             <outlet property="delegate" destination="Ge8-Ea-C9I" id="NuJ-Zt-jUJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="写真メッセージ" id="XFH-3Q-jC0"/>
+                    <navigationItem key="navigationItem" title="投稿" id="XFH-3Q-jC0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvc-1g-3X5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,9 +49,4 @@
     <resources>
         <image name="Icon_photorelay" width="20" height="20"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

@@ -57,6 +57,7 @@
     mailBody = [mailBody stringByAppendingString:tmp];
     tmp = [NSString stringWithFormat:@"[Email]%@\n",email];
     mailBody = [mailBody stringByAppendingString:tmp];
+    
     tmp = [NSString stringWithFormat:@"[期]%@\n",graduate];
     mailBody = [mailBody stringByAppendingString:tmp];
     tmp = [NSString stringWithFormat:@"[メッセージ]%@\n",self.textComment.text];
@@ -71,7 +72,7 @@
                                                                   @"fromEmail":email,
                                                                   @"fromName":username,
                                                                   @"text":mailBody,
-                                                                  @"subject":@"[とーちくんへ一言][iOS]"}
+                                                                  @"subject":@"[ベルギービール万歳][作者へ一言][iOS]"}
                                 block:^(NSString *result, NSError *error) {
                                     if (error) {
                                         NSString *errorString = [[error userInfo] objectForKey:@"error"];
@@ -81,7 +82,7 @@
                                     } else {
                                         UIAlertController * ac =
                                         [UIAlertController alertControllerWithTitle:@"メッセージありがとうござます！"
-                                                                            message:@"とーちくんよりご連絡差し上げる際は、よろしくお願いいたします！"
+                                                                            message:@"作者よりご連絡差し上げる際は、よろしくお願いいたします！"
                                                                      preferredStyle:UIAlertControllerStyleAlert];
                                         UIAlertAction * okAction =
                                         [UIAlertAction actionWithTitle:@"戻る"

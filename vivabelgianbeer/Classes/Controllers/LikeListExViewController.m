@@ -19,8 +19,7 @@
 @implementation LikeListExViewController
 
 enum {
-    SECTION_TOP = 0,
-    SECTION_LIKE,
+    SECTION_LIKE = 0,
     SECTION_SETTINGS,
     NUMBER_OF_SECTION
 } ;
@@ -36,10 +35,6 @@ enum {
     ITEM_PHOTORELAY,
     ITEM_QUIZ,
     ITEM_NEWS,
-    ITEM_LIKE_KITAKYUSHU,
-    ITEM_SHOPPING,
-    ITEM_TOCHIKUJI,
-    ITEM_SCHOOLROUTE,
     NUMBER_OF_ROWS_IN_SECTION_LIKE
 } ;
 
@@ -76,8 +71,6 @@ enum {
     // Return the number of rows in the section.
     
     switch (section) {
-        case SECTION_TOP:
-            return NUMBER_OF_ROWS_IN_SECTION_TOP ;
         case SECTION_LIKE:
             return NUMBER_OF_ROWS_IN_SECTION_LIKE ;
         case SECTION_SETTINGS:
@@ -91,10 +84,6 @@ enum {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     switch (indexPath.section) {
-        case SECTION_TOP:
-            [self doSectionTop:indexPath.row];
-            break;
-
         case SECTION_LIKE :
             [self doSectionLike:indexPath.row];
             break;
@@ -152,33 +141,6 @@ enum {
     }
     
     switch (item) {
-        case ITEM_LIKE_KITAKYUSHU: {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KitaKyushu" bundle:nil];
-            UIViewController *secondViewController = [storyboard instantiateViewControllerWithIdentifier:@"kitakyushu"];
-            [self.navigationController pushViewController:secondViewController animated:YES];
-        } break;
-            
-        case ITEM_SHOPPING: {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-            
-            AdWebViewController *secondViewController = [storyboard instantiateViewControllerWithIdentifier:@"ad_webview"];
-            secondViewController.adURLString = @"http://tokyo2015.tochiku.com/goods.html";
-            [self.navigationController pushViewController:secondViewController animated:YES];
-        } break ;
-
-        case ITEM_TOCHIKUJI:
-        {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Tochikuji" bundle:nil];
-            UIViewController *secondViewController = [storyboard instantiateViewControllerWithIdentifier:@"Tochikuji"];
-            [self.navigationController pushViewController:secondViewController animated:YES];
-        } break;
-        case ITEM_SCHOOLROUTE:
-        {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SchoolRoute" bundle:nil];
-            UIViewController *secondViewController = [storyboard instantiateViewControllerWithIdentifier:@"SchoolRoute"];
-            [self.navigationController pushViewController:secondViewController animated:YES];
-        } break;
-
         default: {
             UITabBarController *controller = nil ;
             controller = self.tabBarController ;

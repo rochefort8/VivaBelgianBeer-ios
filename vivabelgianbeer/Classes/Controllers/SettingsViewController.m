@@ -32,7 +32,6 @@ enum {
 enum {
     ITEM_USER_NAME = 0,
     ITEM_USER_EMAIL,
-    ITEM_USER_GRADUATE,
     ITEM_USER_PASSWORD,
     NUMBER_OF_ROWS_IN_SECTION_USER
 } ;
@@ -113,11 +112,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     NSUInteger row = [indexPath row];
     
     switch (section) {
+/*
         case SECTION_USER_PRIFILE: {
             self.changeUserInfoKind = indexPath.row ;
             [self performSegueWithIdentifier:@"toChangeUserInfo" sender:self];            
         }
             break ;
+ */
         case SECTION_QUIZ:
             switch (row) {
                 case ITEM_NUMBER_OF_QUIZ:

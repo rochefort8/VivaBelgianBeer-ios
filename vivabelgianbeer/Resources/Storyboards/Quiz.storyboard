@@ -331,7 +331,7 @@
                                     <action selector="onReturn:" destination="ejr-0u-aBh" eventType="touchUpInside" id="Wm1-9h-k8R"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Tochikun1" translatesAutoresizingMaskIntoConstraints="NO" id="kXJ-Rn-etC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Home_thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="kXJ-Rn-etC">
                                 <rect key="frame" x="10" y="82" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Xbr-Sa-RST"/>
@@ -380,9 +380,9 @@
     </scenes>
     <resources>
         <image name="Icon_Quiz" width="20" height="20"/>
-        <image name="Image_Tochikun1" width="250" height="267"/>
+        <image name="Image_Home_thumbnail" width="100" height="143"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HL6-NC-zGC"/>
+        <segue reference="grJ-Wa-poy"/>
     </inferredMetricsTieBreakers>
 </document>

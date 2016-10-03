@@ -132,7 +132,7 @@ const NSInteger kNumberOfQuestions = 3;
 
 - (void)setQuestionView {
     
-    self.naviTitle.title = [NSString stringWithFormat:@"質問:その%d",self.index + 1];
+    self.naviTitle.title = [NSString stringWithFormat:@"質問:その%ld",self.index + 1];
     
     QuestionContent *content = [self.questions objectAtIndex:self.index] ;
 //    self.subject.text   = [content getTitle] ;
