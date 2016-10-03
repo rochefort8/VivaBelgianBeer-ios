@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "11036072_1095218043841680_1672817263158458291_o.jpg"
+      "filename" : "Splash_640x1136.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "liketochiku_splash.png"
+      "filename" : "Splash_640x1136-1.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "liketochiku_splash-1.png"
+      "filename" : "Splash_640x1136-2.png",
+      "scale" : "3x"
     }
   ],
   "info" : {
